@@ -1,0 +1,250 @@
+.calculator.theme-1 {
+  --input-bgcolor: hsl(220, 80%, 80%);
+
+  --btn-operator-inactive-bg: hsl(185, 70%, 40%);
+  --btn-operator-hover-bg: hsl(185, 70%, 30%);
+  --btn-operator-active-bg: hsl(185, 70%, 20%);
+
+  --btn-clear-inactive-bg: hsl(350, 70%, 40%);
+  --btn-clear-hover-bg: hsl(350, 70%, 30%);
+  --btn-clear-active-bg: hsl(350, 70%, 20%);
+
+  --btn-num-inactive-bg: hsl(210, 70%, 40%);
+  --btn-num-hover-bg: hsl(210, 70%, 30%);
+  --btn-num-active-bg: hsl(210, 70%, 20%);
+
+  --btn-memory-inactive-bg: hsl(195, 70%, 40%);
+  --btn-memory-hover-bg: hsl(195, 70%, 30%);
+  --btn-memory-active-bg: hsl(195, 70%, 20%);
+
+  --btn-equals-inactive-bg: hsl(230, 70%, 40%);
+  --btn-equals-hover-bg: hsl(230, 70%, 30%);
+  --btn-equals-active-bg: hsl(230, 70%, 20%);
+}
+
+:root {
+  --accent-hue: 300;
+}
+
+.calculator.theme-2 {
+  --input-bgcolor: hsl(var(--accent-hue), 30%, 80%);
+
+  --btn-operator-inactive-bg: hsl(var(--accent-hue), 30%, 10%);
+  --btn-operator-hover-bg: hsl(var(--accent-hue), 30%, 20%);
+  --btn-operator-active-bg: hsl(var(--accent-hue), 30%, 30%);
+
+  --btn-clear-inactive-bg: hsl(var(--accent-hue), 30%, 20%);
+  --btn-clear-hover-bg: hsl(var(--accent-hue), 30%, 30%);
+  --btn-clear-active-bg: hsl(var(--accent-hue), 30%, 40%);
+
+  --btn-num-inactive-bg: hsl(var(--accent-hue), 30%, 30%);
+  --btn-num-hover-bg: hsl(var(--accent-hue), 30%, 40%);
+  --btn-num-active-bg: hsl(var(--accent-hue), 30%, 50%);
+
+  --btn-memory-inactive-bg: hsl(var(--accent-hue), 30%, 40%);
+  --btn-memory-hover-bg: hsl(var(--accent-hue), 30%, 50%);
+  --btn-memory-active-bg: hsl(var(--accent-hue), 30%, 60%);
+
+  --btn-equals-inactive-bg: hsl(var(--accent-hue), 30%, 50%);
+  --btn-equals-hover-bg: hsl(var(--accent-hue), 30%, 60%);
+  --btn-equals-active-bg: hsl(var(--accent-hue), 30%, 70%);
+}
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.btn p,
+.input h2 {
+  font-family: "Manrope", sans-serif;
+}
+
+.calculator {
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  grid-template-rows: 3fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr repeat(3, 1.8fr) 1fr 1fr;
+  grid-template-areas:
+    "input input input input input input"
+    "plusminus seven eight nine equals backspace"
+    "mplus four five six  plus minus"
+    "mminus one two three btntimes obelus"
+    "mrc btnzero btnzero dot c ce";
+}
+
+.input {
+  grid-area: input;
+  background-color: var(--input-bgcolor);
+  display: grid;
+  justify-items: right;
+  padding: 1em;
+  padding-top: 2em;
+  align-items: center;
+  font-size: 3em;
+}
+
+.btn * {
+  pointer-events: none;
+}
+
+.btn {
+  border: none;
+  outline: none;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.btn:hover {
+  transition: background 0.1s ease-in-out;
+}
+
+.btn:active {
+  transition: background 0.1s ease-in-out;
+}
+
+/* Numbers:  */
+
+.btn-num {
+  background-color: var(--btn-num-inactive-bg);
+  font-size: 2em;
+}
+
+.btn-num:hover {
+  background-color: var(--btn-num-hover-bg);
+}
+
+.btn-num:active {
+  background-color: var(--btn-num-active-bg);
+}
+
+.btn0 {
+  grid-area: btnzero;
+}
+
+.btn1 {
+  grid-area: one;
+}
+
+.btn2 {
+  grid-area: two;
+}
+
+.btn3 {
+  grid-area: three;
+}
+.btn4 {
+  grid-area: four;
+}
+.btn5 {
+  grid-area: five;
+}
+.btn6 {
+  grid-area: six;
+}
+.btn7 {
+  grid-area: seven;
+}
+.btn8 {
+  grid-area: eight;
+}
+.btn9 {
+  grid-area: nine;
+}
+.btn-dot {
+  grid-area: dot;
+}
+.btn-plusminus {
+  grid-area: plusminus;
+}
+
+/* M's */
+
+.btn-m {
+  background-color: var(--btn-memory-inactive-bg);
+}
+
+.btn-m:hover {
+  background-color: var(--btn-memory-hover-bg);
+}
+
+.btn-m:active {
+  background-color: var(--btn-memory-active-bg);
+}
+
+.btn-m-minus {
+  grid-area: mminus;
+}
+.btn-m-plus {
+  grid-area: mplus;
+}
+.btn-mrc {
+  grid-area: mrc;
+}
+
+/* Binary Operators */
+
+.btn-operator {
+  background-color: var(--btn-operator-inactive-bg);
+}
+
+.btn-operator:hover {
+  background-color: var(--btn-operator-hover-bg);
+}
+
+.btn-operator:active {
+  background-color: var(--btn-operator-active-bg);
+}
+
+.btn-plus {
+  grid-area: plus;
+}
+.btn-minus {
+  grid-area: minus;
+}
+.btn-obelus {
+  grid-area: obelus;
+}
+.btn-times {
+  grid-area: btntimes;
+}
+
+/* C */
+.btn-c {
+  background-color: var(--btn-clear-inactive-bg);
+  color: white;
+}
+
+.btn-c:hover {
+  background-color: var(--btn-clear-hover-bg);
+}
+
+.btn-c:active {
+  background-color: var(--btn-clear-active-bg);
+}
+
+.btn-c-c {
+  grid-area: c;
+}
+
+.btn-c-ce {
+  grid-area: ce;
+}
+
+.btn-equals {
+  grid-area: equals;
+  background-color: var(--btn-equals-inactive-bg);
+  color: #fff;
+}
+
+.btn-equals:hover {
+  background-color: var(--btn-equals-hover-bg);
+}
+
+.btn-equals:active {
+  background-color: var(--btn-equals-active-bg);
+}
